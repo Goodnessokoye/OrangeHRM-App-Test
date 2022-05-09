@@ -1,0 +1,17 @@
+{
+  "name": "cypress-lession",
+  "version": "1.0.0",
+  "description": "Cypress lession, learning auto test",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "dashboard": "npx cypress run --record --key bbab3268-ed89-439b-b511-f03966b8d92b",
+    "electron": "npx cypress run --record --key bbab3268-ed89-439b-b511-f03966b8d92b --browser electron",
+    "chrome": "npx cypress run --record --key bbab3268-ed89-439b-b511-f03966b8d92b --browser chrome"
+  },
+  "author": "Goodness Okoye",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.6.0"
+  }
+}
