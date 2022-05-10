@@ -1,17 +1,16 @@
 ///<reference types="cypress"/>
 
 describe("OrangeHRM", () => {
-  it("Launch the App", () => {
+  it("Launch the App and Login with valid email and password ", () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/", {
       retryOnNetworkFailure: true,
     });
-  });
-  it("Login with valid email & valid password", () => {
     cy.get("#logInPanelHeading").should("have.text", "LOGIN Panel");
     cy.get("#txtUsername").type("Admin");
     cy.get("#txtPassword").type("admin123");
     cy.get("#btnLogin").should("be.visible");
-    cy.get("#btnLogin").click(), { retryOnNetworkFailure: true };
+    cy.get("#btnLogin").click();
+    cy.wait(1000);
   });
 
   it("LogOut", () => {
@@ -34,7 +33,7 @@ describe("OrangeHRM", () => {
     cy.get("#txtPassword").type("admin123");
     cy.get("#btnLogin").click();
     cy.get("#spanMessage").should("be.visible");
-    cy.wait(1000)
+    cy.wait(1000);
   });
 
   it("Login with no credentials", () => {
